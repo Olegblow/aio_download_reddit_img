@@ -1,6 +1,7 @@
 import asyncio
 import aiofiles
 import aiohttp
+import os
 import re
 
 
@@ -26,6 +27,8 @@ async def get_data(session, url):
 
 async def save_img(session, img_url, img_path):
     """Скачивает картинку и сохраняем ее на диск."""
+    if not os.path.exists('img/'):
+        os.makedirs('img/')
     async with session.get(img_url) as response:
         img = await response.read()
         async with aiofiles.open(img_path, mode='wb') as f:
