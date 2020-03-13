@@ -1,0 +1,12 @@
+#gitignore
+/venvnv
+/venv/
+/venv_/
+.venv/
+/.idea/
+/.vscode/
+/env/
+*.pyc
+/img/
+
+
